@@ -6,13 +6,21 @@ const { writeFile } = require(`fs/promises`);
 const SVG = require(`./lib/svg`);
 const { Circle, Square, Triangle } = require(`./lib/shapes`);
 
-// Inquirer prompt chain to get text in shape, text colour, shape and shape colour
+// Create a function to check the validation of the user input for the text inside the shape. If the text length is longer than 3, return a message informing the user. Otherwise, return true so the prompt chain can continue. 
+const checkShapeText = async (input) => {
+    if (input.length > 3) {
+        return `Please enter text with 3 or less characters`
+    }
+return true;
+}
 
+// Inquirer prompt chain to get text in shape, text colour, shape and shape colour
 inquirer.prompt([
     {
         type: `input`,
         message: `Enter text for the logo. (Must not be more than 3 characters)`,
         name: `shapeText`,
+        validate: checkShapeText,
     },
     {
         type: `input`,
