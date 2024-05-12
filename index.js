@@ -60,8 +60,11 @@ inquirer.prompt([
 writeFile(`logo.svg`, svg.render())
   .then(() => {
     console.log(`Generated logo.svg`);
-  });
-
+  })
+  .catch((error) => {
+    console.log(error),
+    console.log(`An error has been found.`);
+  })
 })
 
 
