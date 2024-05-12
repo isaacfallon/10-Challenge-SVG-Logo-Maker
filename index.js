@@ -3,12 +3,10 @@ const inquirer = require(`inquirer`);
 const { writeFile } = require(`fs/promises`);
 
 // Import 'SVG' and 'shapes' file
-// const svg = require(`./lib/svg`)
-// const shapes = require(`./lib/shapes`)
+const SVG = require(`./lib/svg`);
+const { Circle, Square, Triangle } = require(`./lib/shapes`);
 
 // Inquirer prompt chain to get text in shape, text colour, shape and shape colour
-
-let shape = ``;
 
 inquirer.prompt([
     {
@@ -19,7 +17,7 @@ inquirer.prompt([
     {
         type: `input`,
         message: `Enter a text color.`,
-        name: `shapeTextColor`,
+        name: `textColor`,
     },
     {
         type: `list`,
@@ -33,25 +31,25 @@ inquirer.prompt([
         name: `shapeColor`,
     }
 ])
-.then((response)=> {
+.then(({ shapeText, textColor, shapeType, shapeColor })=> {
 
-    console.log(response.shapeType)
-    console.log(response.shapeColor)
-    if (response.shapeType === `circle`) {
-        shape = `<circle cx="150" cy="100" r="80" fill="${response.shapeColor}" />`
-    } else if (response.shapeType === `square`) {
-        shape = `<rect x="90" y="40" width="120" height="120" fill="${response.shapeColor}" />`
+    let shapeRender;
+
+    if (shapeType === `circle`) {
+        shapeRender = new Circle();
+    } else if (shapeType === `square`) {
+        shapeRender = new Square();
     } else {
-        shape = `<polygon points="150, 18 244, 182 56, 182" fill="${response.shapeColor}" />`
+        shapeRender = new Triangle();
     }
+    shapeRender.setShapeColor(shapeColor);
 
-    const data = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-${shape}
-<text x="150" y="115" font-size="50" text-anchor="middle" fill="${response.shapeTextColor}">${response.shapeText}</text>
-</svg>`
+    const svg = new SVG();
+    svg.setShape(shapeRender);
+    svg.shapeTextAndColor(shapeText, textColor);
 
 // Create svg file using the 'writeFile' module
-writeFile(`logo.svg`, data)
+writeFile(`logo.svg`, svg.render())
   .then(() => {
     console.log(`Generated logo.svg`);
   });
