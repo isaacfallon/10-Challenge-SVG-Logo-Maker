@@ -8,7 +8,7 @@ This project is an SVG logo creation application using the Node.JS command line 
 
 I built this application as a way to easily create an SVG logo based on user input for shape type, shape colour, text within the shape and text colour. This application removes any barriers required for understanding how to create an SVG file and therefore makes it extremely easy to make one from scratch.
 
-By completing this project, I gained a solid understanding of how to utilise Javascript classes and import them throughout other files in the project. I also feel more comfortable implementing tests and better understand their usefulness when used correctly. 
+By completing this project, I gained a solid understanding of how to utilise Javascript classes and import them throughout other files in a project. I also feel more comfortable implementing tests and better understand their usefulness when used correctly. 
 
 ### Video showing how the application works:
 
@@ -26,9 +26,13 @@ Below is an example of an SVG logo created using this application:
 
 ![Example SVG logo created using this application](./examples/logo.svg)
 
+[You can also see a direct link to this SVG file here.](https://github.com/isaacfallon/10-Challenge-SVG-Logo-Maker/blob/main/examples/logo.svg )
+
 ### More examples of created logo.SVG files:
 
-If you would like to see more examples of SVG logos generated using this application, please visit the 'examples' folder in this repository. [Link to the examples folder within this repository.](./examples/)
+If you would like to see more examples of SVG logos generated using this application, [please visit the 'examples' folder in this repository.](./examples/)
+
+https://github.com/isaacfallon/10-Challenge-SVG-Logo-Maker/tree/main/examples
             
 ## Table of Contents
             
@@ -41,7 +45,7 @@ If you would like to see more examples of SVG logos generated using this applica
             
 ## Installation
 
-To install this application, you'll need to firstly clone the repository to your local machine. [Refer to this guide from GitHub if you need help.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository/)
+To install this application, you'll need to clone the repository to your local machine. [Refer to this guide from GitHub if you need help.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository/)
 
 Once cloned, you will need to navigate to the project's folder in your terminal and run the command 'npm i' to install the necessary dependencies. 
             
@@ -88,7 +92,7 @@ Full link: https://stackoverflow.com/questions/57321266/how-to-test-inquirer-val
             
 ## Tests
 
-There are two testing suites that contain five seperate tests within.
+There are two testing suites that contain five separate tests within.
 
 To run these tests, navigate to the project's folder in your terminal. Once you've installed all necessary dependencies by entering: 'npm i', you can run the tests by entering: 'npm run test'.
 
