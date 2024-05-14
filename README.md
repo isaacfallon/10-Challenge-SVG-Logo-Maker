@@ -26,8 +26,6 @@ Below is an example of an SVG logo created using this application:
 
 ![Example SVG logo created using this application](./examples/logo.svg)
 
-[You can also see a direct link to this SVG file here.](https://github.com/isaacfallon/10-Challenge-SVG-Logo-Maker/blob/main/examples/logo.svg )
-
 ### More examples of created logo.SVG files:
 
 If you would like to see more examples of SVG logos generated using this application, [please visit the 'examples' folder in this repository.](./examples/)
